@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.stats as stats
 
-def getdata(file,ind):
+def getdata(file,ind): 
     """
-    
+    Defined getdata for extracting data with given indicators
 
     Returns
     -------
