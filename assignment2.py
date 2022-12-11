@@ -70,10 +70,10 @@ china = chi/ total*100
 united_kingdom = uk/ total*100 # Taking each percentage before plotting 
 
 methane_emission = np.array([australia, united_states, china, united_kingdom])
-
+explode =(0.0,0.0,0.1,0.0)
 
 plt.figure(dpi=144)
-plt.pie(methane_emission, labels = countries, shadow = True, autopct = ('%1.1f%%'))# We used autopct for showing percantages on piechart
+plt.pie(methane_emission, labels = countries, shadow = True, explode = explode, autopct = ('%1.1f%%'))# We used autopct for showing percantages on piechart
 plt.title("Co2 emissions from solid fuel consumption (% of total)") # This function is for showing title of data
 plt.show()
 
@@ -186,3 +186,23 @@ plt.show()
 mean = df2[countries].mean()# Determining mean of forest area
 
 print("Mean", mean)
+
+# Statistical Analysis
+
+
+df_a, df_b = getdata('API_19_DS2_en_csv_v2_4700503.csv','SP.POP.TOTL')
+# Filter data by years
+df_b = df_b[(df_b['Years']>="1990") & (df_b['Years']<="2020")]
+# Cleaning data by droping nan values
+df_b.dropna()
+
+countries_mean = np.mean(df_b[countries])
+countries_std = np.std(df_b[countries])
+countries_skew = stats.skew(df_b[countries])
+countries_kurtosis = stats.kurtosis(df_b[countries])
+
+print("countries_mean: ",countries_mean)
+print("countries_std: ",countries_std)
+print("countries_skew: ",countries_skew)
+print("countries_kurtosis: ",countries_kurtosis)
+
