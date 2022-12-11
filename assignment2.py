@@ -109,7 +109,9 @@ plt.ylabel('Total population')
 plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
 
+mean = df2[countries].mean() # Determining mean of total population
 
+print("Mean", mean)
 
 
 # Pie chart
@@ -139,8 +141,8 @@ plt.show()
 
 
 
-skew = stats.skew(df2[countries]) # For determining skewness of nitrous oxide emission 
-print("Skewness", skew)
+#skew = stats.skew(df2[countries]) # For determining skewness of nitrous oxide emission 
+#print("Skewness", skew)
 
 
 
@@ -180,3 +182,7 @@ plt.xlabel('Years')
 plt.ylabel('Sq,Km')
 plt.legend(loc = 'center left', bbox_to_anchor = (1, 0.5))
 plt.show()
+
+mean = df2[countries].mean()# Determining mean of forest area
+
+print("Mean", mean)
